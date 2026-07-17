@@ -10,15 +10,16 @@
  */
 class Solution {
     public ListNode swapPairs(ListNode head) {
-        if(head==null || head.next==null){
+        if (head == null || head.next == null) {
             return head;
         }
-        ListNode firxt=head;
-        ListNode second=head.next;
-        firxt.next=second.next;
-        second.next=firxt;
-        head=second;
-        firxt.next=swapPairs(firxt.next);
-        return head;
+
+        ListNode first = head;
+        ListNode second = head.next;
+
+        first.next = swapPairs(second.next);
+        second.next = first;
+
+        return second;
     }
 }
