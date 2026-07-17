@@ -31,21 +31,3 @@ class Solution {
         return first;
     }
 }
-//my approach
-class Solution {
-    public ListNode deleteDuplicates(ListNode head) {
-        if(head==null || head.next==null){
-            return head;
-        }
-        ListNode first=head;
-        ListNode second=first.next;
-        if(first.val==second.val){
-            return second.next;
-        }
-        if(first.val!=second.val){
-            second=deleteDuplicates(second);
-            first.next=second;
-        }
-        return first;
-    }
-}
