@@ -23,3 +23,17 @@ class Solution {
         return second;
     }
 }
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+        if(head==null || head.next==null){
+            return head;
+        }
+        ListNode firxt=head;
+        ListNode second=head.next;
+        firxt.next=second.next;
+        second.next=firxt;
+        head=second;
+        firt.next=swapPairs(firxt.next);
+        return head;
+    }
+}
