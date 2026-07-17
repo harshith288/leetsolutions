@@ -33,7 +33,7 @@ class Solution {
         firxt.next=second.next;
         second.next=firxt;
         head=second;
-        firt.next=swapPairs(firxt.next);
+        firxt.next=swapPairs(firxt.next);
         return head;
     }
 }
